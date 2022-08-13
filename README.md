@@ -17,7 +17,6 @@
 ![](https://img.shields.io/badge/Tools-React-informational?style=flat&logo=react&logoColor=white&color=61DAFB)
 ![](https://img.shields.io/badge/Tools-Redux-informational?style=flat&logo=redux&logoColor=white&color=764ABC)
 ![](https://img.shields.io/badge/Shell-Bash-informational?style=flat&logo=gnu-bash&logoColor=white&color=4EAA25)
-![](https://img.shields.io/badge/OS-Linux-informational?style=flat&logo=linux&logoColor=white&color=FCC624)
 
 <p><img align="center" src="https://github-readme-stats.vercel.app/api?username=yanbingjiang&hide=stars,contribs&count_private=true&show_icons=true&theme=onedark" alt="yanbingjiang" /></p>
 <p align="left">
