@@ -20,7 +20,7 @@
 ![](https://img.shields.io/badge/Shell-Bash-informational?style=flat&logo=gnu-bash&logoColor=white&color=4EAA25)
 
 <p align="left">
-  <img height=170 align="center" src="https://github-readme-stats.vercel.app/api?username=yanbingjiang&hide=contribs&include_all_commits=true&show_icons=true&rank_icon=github&theme=onedark" alt="yanbingjiangSTAT" />
+  <img height=170 align="center" src="https://github-readme-stats.vercel.app/api?username=yanbingjiang&hide=contribs&show_icons=true&rank_icon=github&include_all_commits=true&theme=onedark" alt="yanbingjiangSTAT" />
   <img height=170 align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yanbingjiang&layout=compact&custom_title=Recent%20Languages%20&#128572;" alt="yanbingjiangLANG" />
 </p>
 <p align="left">
