@@ -12,11 +12,12 @@ jobs:
         uses: actions/checkout@v3
 
       - uses: suisei-cn/actions-download-file@v1.3.0
-        id: stats.svg
+        id: stats
         name: Download the stat file
         with:
           url: "https://yanbing-github-readme-stats.vercel.app/api?username=yanbingjiang&show_icons=true&rank_icon=github&include_all_commits=true&theme=onedark"
           target: grs
+          filename: stats.svg
       - uses: actions/upload-artifact@master
         with:
           name: stats
