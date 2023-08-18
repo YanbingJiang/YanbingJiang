@@ -1,0 +1,70 @@
+name: GitHub Readme Stats Download
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: 0 */2 * * *
+
+jobs:
+  stats:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Stats Card
+    steps:
+      - uses: actions/checkout@v3
+        name: Check out current commit
+
+      - uses: suisei-cn/actions-download-file@v1.3.0
+        id: stats
+        name: Download the stat file
+        with:
+          url: "https://yanbing-github-readme-stats.vercel.app/api?username=yanbingjiang&show_icons=true&rank_icon=github&include_all_commits=true&theme=onedark"
+          target: grs
+          filename: stats.svg
+      - uses: actions/upload-artifact@master
+        with:
+          name: stats
+          path: grs
+
+  top-langs:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Top-langs Card
+    steps:
+      - uses: actions/checkout@v3
+        name: Check out current commit
+
+      - uses: suisei-cn/actions-download-file@v1.3.0
+        id: stats
+        name: Download the top-langs file
+        with:
+          url: "https://yanbing-github-readme-stats.vercel.app/api/top-langs/?username=yanbingjiang&layout=compact&custom_title=Recent%20Languages%20&#128572;"
+          target: grs
+          filename: top-langs.svg
+      - uses: actions/upload-artifact@master
+        with:
+          name: top-langs
+          path: grs
+
+  push:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Push
+    needs: [stats, top-langs]
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: stats
+          path: grs
+      - uses: actions/download-artifact@master
+        with:
+          name: top-langs
+          path: grs
+      - name: Push
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: resource/grs
+          build_dir: grs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
