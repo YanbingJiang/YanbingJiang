@@ -1,0 +1,40 @@
+name: GitHub Readme Stats Download
+on:
+
+jobs:
+  stats:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Stats Card
+    steps:
+      - name: Check out current commit
+        uses: actions/checkout@v3
+
+      - uses: suisei-cn/actions-download-file@v1.3.0
+        id: stats
+        name: Download the stat file
+        with:
+          url: "https://yanbing-github-readme-stats.vercel.app/api?username=yanbingjiang&show_icons=true&rank_icon=github&include_all_commits=true&theme=onedark"
+          target: grs
+      # - uses: actions/upload-artifact@master
+      #   with:
+      #     name: stats
+      #     path: grs
+
+  push:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Push
+    needs: [stats]
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: stats
+          path: grs
+      - name: Push
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: grs
+          build_dir: grs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
