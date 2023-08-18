@@ -1,5 +1,8 @@
 name: GitHub Readme Stats Download
 on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 * * * *
 
 jobs:
   stats:
