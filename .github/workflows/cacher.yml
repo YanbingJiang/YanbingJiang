@@ -1,4 +1,4 @@
-name: GitHub Readme Stats Download
+name: GRS Download
 
 on:
   workflow_dispatch:
