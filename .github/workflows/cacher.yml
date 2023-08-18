@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Stats Card
     steps:
-      - name: Check out current commit
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        name: Check out current commit
 
       - uses: suisei-cn/actions-download-file@v1.3.0
         id: stats
@@ -28,8 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Top-langs Card
     steps:
-      - name: Check out current commit
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        name: Check out current commit
 
       - uses: suisei-cn/actions-download-file@v1.3.0
         id: stats
@@ -52,6 +52,10 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: stats
+          path: grs
+      - uses: actions/download-artifact@master
+        with:
+          name: top-langs
           path: grs
       - name: Push
         uses: crazy-max/ghaction-github-pages@v3
