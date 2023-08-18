@@ -17,10 +17,10 @@ jobs:
         with:
           url: "https://yanbing-github-readme-stats.vercel.app/api?username=yanbingjiang&show_icons=true&rank_icon=github&include_all_commits=true&theme=onedark"
           target: grs
-      # - uses: actions/upload-artifact@master
-      #   with:
-      #     name: stats
-      #     path: grs
+      - uses: actions/upload-artifact@master
+        with:
+          name: stats
+          path: grs
 
   push:
     permissions: write-all
