@@ -39,7 +39,7 @@ jobs:
         id: stats
         name: Download the top-langs file
         with:
-          url: "https://yanbing-github-readme-stats.vercel.app/api/top-langs/?username=yanbingjiang&layout=compact&custom_title=Recent%20Languages%20&#128572;"
+          url: "https://yanbing-github-readme-stats.vercel.app/api/top-langs/?username=yanbingjiang&layout=compact&theme=onedark&custom_title=Recent%20Languages%20%F0%9F%98%BC"
           target: grs
           filename: top-langs.svg
       - uses: actions/upload-artifact@master
